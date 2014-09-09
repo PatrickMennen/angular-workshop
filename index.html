@@ -2,13 +2,14 @@
 <html>
 	<head>
 		<title>Todo List</title>
+		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body ng-app="todo" ng-controller="taskController">
-		<ul>
-			<li ng-repeat="task in tasks"><input type="checkbox" ng-checked="task.done" /> {{ task.title }}</li>
+		<ul id="tasks">
+			<li ng-class="{ done: task.done }" ng-repeat="task in tasks"><input type="checkbox" ng-checked="task.done" ng-model="task.done" /> {{ task.title }}</li>
 			<li>
-				<input type="text" name="task" placeholder="Please enter a task description here..." />
-				<input type="submit" value="Add" />
+				<input ng-model="task" type="text" name="title" placeholder="Please enter a task description here..." />
+				<input type="submit" value="Add" ng-click="add()" />
 			</li>
 		</ul>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>

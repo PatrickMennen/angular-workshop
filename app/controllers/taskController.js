@@ -5,4 +5,12 @@ app.controller('taskController', ['$scope', function($scope){
 		{ title: 'Some other random task', done: false }
 	];
 
+	$scope.add = function() {
+		console.log($scope.task);
+		$scope.tasks.push({
+			title: $scope.task,
+			done: false
+		});
+
+	};
 }]);
