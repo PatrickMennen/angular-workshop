@@ -1,4 +1,4 @@
-app.controller('taskController', ['$scope', function($scope){
+app.controller('tasksController', ['$scope', function($scope){
 	$scope.tasks = [
 		{ title: 'Get milk', done: true },
 		{ title: 'Write AngularJS tutorial code', done: false },
@@ -6,7 +6,6 @@ app.controller('taskController', ['$scope', function($scope){
 	];
 
 	$scope.add = function() {
-		console.log($scope.task);
 		$scope.tasks.push({
 			title: $scope.task,
 			done: false
