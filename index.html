@@ -3,9 +3,9 @@
 	<head>
 		<title>Todo List</title>
 	</head>
-	<body>
+	<body ng-app="todo" ng-controller="taskController">
 		<ul>
-			<li>Simple task numero uno</li>
+			<li ng-repeat="task in tasks"><input type="checkbox" ng-checked="task.done" /> {{ task.title }}</li>
 			<li>
 				<input type="text" name="task" placeholder="Please enter a task description here..." />
 				<input type="submit" value="Add" />
@@ -14,5 +14,6 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular-route.min.js"></script>
 		<script src="app/app.js"></script>
+		<script src="app/controllers/taskController.js"></script>
 	</body>
 </html>
