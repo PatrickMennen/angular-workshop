@@ -1,15 +1,22 @@
-app.controller('tasksController', ['$scope', function($scope){
-	$scope.tasks = [
-		{ title: 'Get milk', done: true },
-		{ title: 'Write AngularJS tutorial code', done: false },
-		{ title: 'Some other random task', done: false }
-	];
-
+app.controller('tasksController', ['$scope', 'tasks', function($scope, tasks){
 	$scope.add = function() {
-		$scope.tasks.push({
+		var task = {
 			title: $scope.task,
 			done: false
-		});
+		};
 
+		tasks.create(task);
+	};
+
+	tasks.watchChanges(function (changes) {
+		tasks.getAll(function(tasks) {
+			$scope.$apply(function() {
+				$scope.tasks = tasks;
+			});
+		});
+	});
+
+	$scope.updateTask = function(task) {
+		tasks.update(task);
 	};
 }]);
