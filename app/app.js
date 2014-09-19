@@ -7,5 +7,4 @@ var app = angular.module('todo', ['ngRoute']).config(['$routeProvider', function
 	$routeProvider.otherwise({
 		redirectTo: '/tasks'
 	});
-
 }]);

@@ -16,6 +16,10 @@ app.factory('tasks', function(){
 			db.post(task);
 		},
 
+		remove: function(task) {
+			db.remove(task);
+		},
+
 		watchChanges: function(callback) {
 			db.changes({ since: 'now', live: true }).on('change', function(change) { callback(change); });
 		}

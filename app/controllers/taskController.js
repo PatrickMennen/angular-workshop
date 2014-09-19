@@ -19,4 +19,8 @@ app.controller('tasksController', ['$scope', 'tasks', function($scope, tasks){
 	$scope.updateTask = function(task) {
 		tasks.update(task);
 	};
+
+	$scope.removeTask = function(task) {
+		tasks.remove(task);
+	};
 }]);
