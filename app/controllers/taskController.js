@@ -12,6 +12,7 @@ app.controller('tasksController', ['$scope', 'tasks', function($scope, tasks){
 		tasks.getAll(function(tasks) {
 			$scope.$apply(function() {
 				$scope.tasks = tasks;
+				console.log(tasks);
 			});
 		});
 	});

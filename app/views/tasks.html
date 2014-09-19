@@ -1,5 +1,5 @@
 <ul id="tasks">
-	<li ng-class="task { done: task.done }" ng-repeat="task in tasks"><input type="checkbox" ng-change="updateTask(task)" ng-checked="task.done" ng-model="task.done" id="task-{{ task._id }}" /> <label for="task-{{ task._id }}">{{ task.title }}</label><a class="remove-task" ng-click="removeTask(task)">x</a></li>
+	<task-item task="task"></task-item>
 	<li class="new">
 		<form>
 			<input ng-model="task" type="text" name="title" placeholder="Please enter a task description here..." />
